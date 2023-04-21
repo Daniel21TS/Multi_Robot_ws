@@ -1,5 +1,5 @@
 # Multi_Robot_ws
-Workspace with multiple robots. Gmapping, Move base, Multi map merge, Exploration, ...
+Workspace with multiple robots. Gmapping, Move base, Multi map merge and Exploration in Stage world.
 
 Used packages:
   - p3dx_description;
