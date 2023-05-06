@@ -7,4 +7,4 @@ Used packages:
 
 How to run:
   - source devel/setup.bash
-  - roslaunch first_robot_navigation stage_gmap_move_explo.launch
+  - roslaunch first_robot_navigation main.launch
