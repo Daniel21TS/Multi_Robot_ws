@@ -1,6 +1,8 @@
 # Multi_Robot_ws
 Workspace with multiple robots. Occupancy Grid Mapping, Move base, Multi Map Merge and Exploration Lite in Stage world.
 
+The key file for multirobot exploration is multi_explore.py on first_robot_navigation/scripts/multi_explore.py.
+
 Used packages:
   - p3dx_description;
   - rc_simul_worlds;
