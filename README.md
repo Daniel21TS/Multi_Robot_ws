@@ -5,8 +5,8 @@ The key file for multirobot exploration is multi_explore.py on first_robot_navig
 
 Used packages:
   - p3dx_description;
-  - rc_simul_worlds;
-  - robot_laser_grid_mapping; 
+  - rc_simul_worlds; 
+  - robot_laser_grid_mapping (https://github.com/salihmarangoz/robot_laser_grid_mapping); 
 
 How to run:
   - source devel/setup.bash
