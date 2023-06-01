@@ -1,5 +1,5 @@
 # Multi_Robot_ws
-Workspace for exploration with multiple robots. Occupancy Grid Mapping, Move base, Multi Map Merge and Exploration node in Stage world.
+Workspace for exploration with multiple robots. Occupancy Grid Mapping, Move base, Multi Map Merge and Exploration node in Stage world. Right now, i'm using a centralized strategy for exploration.
 
 The key file for multirobot exploration is multi_explore.py on first_robot_navigation/scripts/multi_explore.py.
 
