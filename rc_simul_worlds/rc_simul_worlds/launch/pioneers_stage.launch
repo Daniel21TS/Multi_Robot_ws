@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="world" default="building" doc="worlds: building | isr_floor0"/>
+  <arg name="n" default="2" doc="number of robots"/>
+  
+  <node pkg="stage_ros" type="stageros" name="stageros"
+args="$(find rc_simul_worlds)/worlds/$(arg world)/$(arg n)pioneer_$(arg world).world" respawn="false">
+    <param name="/use_sim_time" value="true"/>
+    <param name="base_watchdog_timeout" value="0.2"/>
+    <remap from="robot_0/base_scan" to="robot_0/scan"/>
+    <remap from="robot_1/base_scan" to="robot_1/scan"/>
+    <remap from="robot_2/base_scan" to="robot_2/scan"/>
+    <remap from="robot_3/base_scan" to="robot_3/scan"/>
+    <remap from="robot_4/base_scan" to="robot_4/scan"/>
+    <remap from="robot_5/base_scan" to="robot_5/scan"/>
+    <remap from="robot_6/base_scan" to="robot_6/scan"/>
+    <remap from="robot_7/base_scan" to="robot_7/scan"/>
+  </node>
+  
+</launch>
+

@@ -1,0 +1,18 @@
+include "building.inc"
+
+pioneer
+(		  
+  	# Can refer to the robot by this name
+  	name "pioneer0"
+  	pose [ 6.5 7.6 0.0 0.0 ]
+	color "blue"
+)
+
+pioneer
+(		  
+  	# Can refer to the robot by this name
+  	name "pioneer1"
+  	pose [ 6.0 5.5 0.0 0.0 ]
+	color "red"
+)
+

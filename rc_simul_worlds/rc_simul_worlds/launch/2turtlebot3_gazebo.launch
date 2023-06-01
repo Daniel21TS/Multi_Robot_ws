@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="world" default="$(find turtlebot3_gazebo)/worlds/turtlebot3_stage_4.world" />
+  
+  <arg name="ns1" default="robot1"/>
+  <arg name="x1_pos" default="0.0"/>
+  <arg name="y1_pos" default="0.0"/>
+  <arg name="z1_pos" default="0.0"/>
+  <arg name="yaw1_angle" default="0.0"/>
+  
+  <arg name="ns2" default="robot2"/>
+  <arg name="x2_pos" default="0.0"/>
+  <arg name="y2_pos" default="0.0"/>
+  <arg name="z2_pos" default="0.0"/>
+  <arg name="yaw2_angle" default="0.0"/>
+  
+  <arg name="visible_laser" default="true"/> 
+  
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world)"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder
+  	'$(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro'
+  	laser_visual:=$(arg visible_laser)" />
+  	
+  <group ns="$(arg ns1)">
+    <param name="tf_prefix" value="$(arg ns1)" />
+  	 	
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+      <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+  	
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model $(arg ns1) -x $(arg x1_pos) -y $(arg y1_pos) -z $(arg z1_pos) -Y $(arg yaw1_angle) -param /robot_description" />
+    	<remap from="base_scan" to="scan"/>
+  </group>
+  
+  <group ns="$(arg ns2)">
+    <param name="tf_prefix" value="$(arg ns2)" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+      <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+      	
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model $(arg ns2) -x $(arg x2_pos) -y $(arg y2_pos) -z $(arg z2_pos) -Y $(arg yaw2_angle) -param /robot_description" />
+    	<remap from="base_scan" to="scan"/>
+  </group>
+  
+</launch>

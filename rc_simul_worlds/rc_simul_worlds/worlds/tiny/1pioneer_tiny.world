@@ -1,0 +1,10 @@
+include "tiny.inc"
+
+pioneer
+(		  
+  	# Can refer to the robot by this name
+  	name "pioneer0"
+  	pose [ 1.0 1.0 0.0 0.0 ]
+	color "blue"
+)
+

@@ -1,0 +1,10 @@
+include "isr_floor0.inc"
+
+pioneer
+(		  
+  	# Can refer to the robot by this name
+  	name "pioneer0"
+  	pose [ 6.296 15.337 0.000 89.762 ]
+	color "blue"
+)
+
