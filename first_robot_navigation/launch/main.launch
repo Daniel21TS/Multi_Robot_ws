@@ -32,6 +32,11 @@
       <arg name="init_pose_yaw" value="$(arg init_pose_yaw)"/>
     </include>
 
+    <!--Explore Node -->
+    <node pkg="first_robot_navigation" type="multi_explore.py" name="explore" output="screen">
+      <param name="robot_namespace" value="$(arg prefix)"/>
+    </node>
+
   </group>
 
   <!--Robot 1-->
@@ -54,6 +59,11 @@
       <arg name="init_pose_z" value="$(arg init_pose_z)"/>
       <arg name="init_pose_yaw" value="$(arg init_pose_yaw)"/>
     </include> 
+
+    <!--Explore Node -->
+    <node pkg="first_robot_navigation" type="multi_explore.py" name="explore" output="screen">
+      <param name="robot_namespace" value="$(arg prefix)"/>
+    </node>
 
   </group>
 
@@ -78,6 +88,11 @@
       <arg name="init_pose_yaw" value="$(arg init_pose_yaw)"/>
     </include> 
 
+    <!--Explore Node -->
+    <node pkg="first_robot_navigation" type="multi_explore.py" name="explore" output="screen">
+      <param name="robot_namespace" value="$(arg prefix)"/>
+    </node>
+
   </group>
 
   <!--group ns="map_merge"-->
@@ -94,9 +109,6 @@
       <param name="estimation_rate" value="0.5"/>
       <param name="estimation_confidence" value="1.0"/>
   </node>
-
-  <!--Explore Node -->
-  <node pkg="first_robot_navigation" type="multi_explore.py" name="explore" output="screen"/> 
   
   <!--Transformada para cologar /robot_0/cmap e map sobrepostos-->
   <node pkg="tf" type="static_transform_publisher" name="static_tf_map_to_map_merged" args="-11.0 -3.0 0.0 0.0 0.0 0.0 map_merged map 10"  /> 
