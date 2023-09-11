@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-  <include file="$(find rc_simul_worlds)/launch/turtlebot3_gazebo.launch">
-    <arg name="world" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_house.world"/>
-    <arg name="x_pos" value="-2.0"/>
-    <arg name="y_pos" value="1.0"/>
-    <arg name="yaw_angle" value="1.57079633"/>
-  </include>
-</launch>
