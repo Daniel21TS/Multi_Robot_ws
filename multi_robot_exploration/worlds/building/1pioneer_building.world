@@ -1,0 +1,9 @@
+include "mit_killian_court.inc"
+
+pioneer
+(		  
+  	# Can refer to the robot by this name
+  	name "pioneer0"
+  	pose [ 142.0 91.0 0.0 0.0 ]
+	color "blue"
+)
